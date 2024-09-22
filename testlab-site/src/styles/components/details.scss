@@ -1,0 +1,19 @@
+.details {
+  display: grid;
+  grid-template-columns: repeat(2, 592px);
+  grid-template-rows: repeat(2, 245px);
+  gap: 37px 32px;
+  width: 1216px;
+  height: 527px;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 17px;
+    font-size: 18px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}

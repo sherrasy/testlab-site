@@ -1,0 +1,33 @@
+.main-page {
+  font-family: 'GraphikLCG';
+  font-size: 14px;
+  color: $color-black;
+  &__heading-wrapper {
+    height: 960px;
+    max-height: 960px;
+    background-color: $color-primary-hover; //temp
+  }
+
+  &__general-info-wrapper {
+    @include default-flex-centered-column;
+    gap: 80px;
+    height: 969px;
+    max-height: 969px;
+  }
+
+  &__reviews-wrapper,
+  &__faq-wrapper,
+  &__details-wrapper,
+  &__form-wrapper {
+    @include default-flex-centered;
+  }
+
+  &__reviews-wrapper,
+  &__details-wrapper {
+    background-color: $color-extralight-gray;
+  }
+
+  &__details-wrapper {
+    height: 662px;
+  }
+}

@@ -12,16 +12,18 @@ function MainPage(): JSX.Element {
 
   return (
     <div className='main-page'>
+      <section className="main-page__heading-wrapper">
         <Header/>
-        <Greeting/>
-        <section>
+        <Greeting/>        
+      </section>
+        <section className="main-page__general-info-wrapper">
           <HowToInfo/>
           <ThirdBlock/>
         </section>
-        <Reviews/>
-        <Faq/>
-        <Details/>
-        <Form/>
+        <section className="main-page__reviews-wrapper"><Reviews/></section>
+        <section className="main-page__faq-wrapper"><Faq/></section>
+        <section className="main-page__details-wrapper"><Details/></section>
+        <section className="main-page__form-wrapper"><Form/></section>
         <Footer/>
     </div>
   );

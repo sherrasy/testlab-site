@@ -1,0 +1,44 @@
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  color: $color-white;
+
+  &__logo {
+    @include default-flex-centered;
+
+    svg {
+      width: 37px;
+    }
+
+    h5 {
+      font-size: 20px;
+      margin-left: 9px;
+    }
+  }
+}
+
+.navigation {
+  &__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 24px;
+    list-style-type: none;
+    font-size: 16px;
+  }
+
+  &__option > a {
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &__option > a:hover {
+    text-decoration: underline;
+  }
+}
