@@ -1,0 +1,155 @@
+.form {
+  @include default-flex-centered-column;
+  width: 800px;
+  margin: 80px 0;
+
+  &__title {
+    text-align: center;
+    font-size: 40px;
+  }
+
+  &__content-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 384px);
+    grid-template-rows: repeat(2, 64px);
+    gap: 30px 32px;
+  }
+
+  &__button {
+    background-color: $color-primary;
+    border-radius: 4px;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: $color-white;
+
+    &.disabled {
+      background-color: $color-primary-disabled;
+    }
+  }
+
+  &__button:hover {
+    background-color: $color-primary-hover;
+    cursor: pointer;
+  }
+}
+
+.form-input {
+  &__input {
+    width: 350px;
+    height: 31px;
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 4px;
+    border: 2px solid $color-extralight-gray;
+    background-color: $color-extralight-gray;
+  }
+
+  &__input::-webkit-input-placeholder {
+    color: $color-dark-gray;
+  }
+
+  &__input::-moz-placeholder {
+    color: $color-dark-gray;
+  }
+
+  &__input:-ms-input-placeholder {
+    color: $color-dark-gray;
+  }
+
+  &__input::-ms-input-placeholder {
+    color: $color-dark-gray;
+  }
+
+  &__input::placeholder {
+    color: $color-dark-gray;
+  }
+
+  &__input:focus {
+    border: 2px solid $color-mid-gray;
+    background-color: $color-white;
+    color: $color-dark-gray;
+    outline: none;
+    padding-top: 28px;
+    padding-bottom: 4px;
+  }
+
+  &__input:focus::-webkit-input-placeholder {
+    color: $color-mid-gray;
+  }
+
+  &__input:focus::-moz-placeholder {
+    color: $color-mid-gray;
+  }
+
+  &__input:focus:-ms-input-placeholder {
+    color: $color-mid-gray;
+  }
+
+  &__input:focus::-ms-input-placeholder {
+    color: $color-mid-gray;
+  }
+
+  &__input:focus::placeholder {
+    color: $color-mid-gray;
+  }
+
+  &__label {
+    opacity: 0;
+    position: relative;
+    top: 24px;
+    left: 18px;
+    font-size: 14px;
+    color: $color-gray;
+
+    &.label--visible {
+      opacity: 1;
+    }
+  }
+}
+
+.form-checkbox {
+  label {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 28px;
+    cursor: pointer;
+  }
+
+  &__input {
+    opacity: 0;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid $color-mid-gray;
+
+    &.checked {
+      border: 2px solid $color-primary;
+      background-color: $color-primary;
+      svg {
+        position: relative;
+        top: 2px;
+        left: 2px;
+        width: 16px;
+        height: 16px;
+        display: inline;
+      }
+    }
+  }
+
+  &__icon svg {
+    display: none;
+  }
+
+  &__label {
+    font-size: 16px;
+    margin-left: 16px;
+  }
+}
