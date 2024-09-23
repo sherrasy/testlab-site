@@ -1,0 +1,67 @@
+.main-page {
+  display: flex;
+  flex-direction: column;
+  font-family: 'GraphikLCG';
+  font-size: 14px;
+  color: $color-black;
+
+  &__heading-wrapper {
+    overflow-x: auto;
+    height: 960px;
+    max-height: 960px;
+    background-image: url('/img/lunch-dekstop-photo.png');
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__general-info-wrapper {
+    overflow-x: auto;
+    @include default-flex-centered-column;
+    gap: 80px;
+    height: 969px;
+    max-height: 969px;
+  }
+
+  &__reviews-wrapper,
+  &__faq-wrapper,
+  &__details-wrapper,
+  &__form-wrapper {
+    @include default-flex-centered;
+    overflow-x: auto;
+  }
+
+  &__reviews-wrapper,
+  &__details-wrapper {
+    background-color: $color-extralight-gray;
+  }
+
+  &__reviews-wrapper {
+    height: 564px;
+  }
+
+  &__details-wrapper {
+    height: 662px;
+  }
+
+  @media screen and (max-width: 768px) {
+    &__heading-wrapper {
+      height: 1024px;
+      max-height: 1024px;
+      background-image: url('/img/lunch-tablet-photo.png');
+    }
+  }
+  @media screen and (max-width: 375px) {
+    &__heading-wrapper {
+      height: 596px;
+      max-height: 596px;
+      background-image: url('/img/lunch-mobile-photo.png');
+    }
+  }
+  @media screen and (max-width: 320px) {
+    &__heading-wrapper {
+      height: 509px;
+      max-height: 509px;
+      background-image: url('/img/lunch-mobile-small-photo.png');
+    }
+  }
+}

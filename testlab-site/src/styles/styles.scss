@@ -1,0 +1,26 @@
+// Global
+//-----------------
+
+@import './vendor/normalize';
+@import './global/variables';
+@import './global/fonts';
+@import './global/mixins';
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+
+// Pages
+//-----------------
+@import './pages/main-page';
+
+// Blocks
+//-----------------
+@import './components/details';
+@import './components/faq';
+@import './components/footer';
+@import './components/form';
+@import './components/greeting';
+@import './components/header';
+@import './components/how-to-info';
+@import './components/reviews';
+@import './components/third-block';
