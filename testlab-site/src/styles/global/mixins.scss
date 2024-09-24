@@ -17,3 +17,61 @@
   -ms-flex-direction: column;
   flex-direction: column;
 }
+
+@mixin font-headline-1 {
+  font-size: 52px;
+  line-height: 64px;
+}
+
+@mixin font-headline-2 {
+  font-size: 40px;
+  line-height: 56px;
+}
+
+@mixin font-headline-3 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+@mixin font-headline-4 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@mixin font-headline-5 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin font-headline-6 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin font-body-18 {
+  font-size: 18px;
+  line-height: 32px;
+}
+
+@mixin font-body-16 {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+@mixin font-body-14 {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@mixin font-body-12 {
+  font-size: 12px;
+  line-height: 24px;
+}
+
+@mixin section-params-vp {
+  margin: 80px 0;
+  @media screen and (min-width: 320px) and (max-width: 374px) {
+    width: 288px;
+    margin: 56px 0;
+  }
+}

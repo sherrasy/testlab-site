@@ -1,4 +1,4 @@
-import { howToData } from "./how-to-data";
+import { howToData } from "@utils/mockData/how-to-data";
 
 function HowToInfo(): JSX.Element {
 
@@ -9,8 +9,10 @@ function HowToInfo(): JSX.Element {
       {howToData.map(({ id, icon, title, text }) => (
         <div className="how-to-info__item how-to-item" key={id}>
             <div className="how-to-item__icon">{icon}</div>
+            <div className="how-to-item__title-container">
             <h6 className="how-to-item__title"> {title}</h6>
             <span className="how-to-item__text"> {text}</span>
+            </div>
         </div>
       ))}
       </div>

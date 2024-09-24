@@ -24,11 +24,11 @@
 
   &__title {
     margin-bottom: 18px;
-    font-size: 52px;
+    @include font-headline-1;
   }
 
   &__text {
-    font-size: 18px;
+    @include font-body-18;
   }
 
   &__button {
@@ -36,8 +36,9 @@
     background-color: $color-light-gray;
     border-radius: 4px;
     border: 2px solid $color-light-gray;
-    font-size: 20px;
+    @include font-headline-5;
     font-weight: 600;
+    margin-bottom: 120px;
   }
 
   &__button:hover {
@@ -45,5 +46,67 @@
     border-radius: 4px;
     border: 2px solid $color-mid-gray;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) and (min-width: 476px) {
+    max-height: 944px;
+    &__text-container {
+      margin-bottom: 40px;
+      width: 476px;
+    }
+
+    &__title {
+      margin-bottom: 17px;
+      @include font-headline-3;
+    }
+
+    &__text {
+      @include font-body-16;
+    }
+
+    &__button {
+      margin-bottom: 100px;
+    }
+  }
+
+  @media screen and (min-width: 375px) and (max-width: 475px) {
+    max-height: 516px;
+
+    &__button {
+      margin-bottom: 90px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    max-height: 429px;
+
+    &__text-container {
+      margin-top: 26px;
+      margin-bottom: 26px;
+      width: 188px;
+    }
+
+    &__text {
+      @include font-body-14;
+    }
+
+    &__title {
+      margin-bottom: 10px;
+      @include font-headline-6;
+    }
+  }
+
+  @media screen and (min-width: 320px) and (max-width: 475px) {
+    &__text-container {
+      margin-bottom: 26px;
+      width: 288px;
+    }
+    &__text {
+      @include font-body-16;
+    }
+    &__title {
+      margin-bottom: 10px;
+      @include font-headline-4;
+    }
   }
 }

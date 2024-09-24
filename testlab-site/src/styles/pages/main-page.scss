@@ -36,7 +36,8 @@
   }
 
   &__reviews-wrapper {
-    height: 564px;
+    height: auto;
+    overflow-x: hidden;
   }
 
   &__details-wrapper {
@@ -50,18 +51,32 @@
       background-image: url('/img/lunch-tablet-photo.png');
     }
   }
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 476px) and (min-width: 375px) {
     &__heading-wrapper {
       height: 596px;
       max-height: 596px;
       background-image: url('/img/lunch-mobile-photo.png');
     }
   }
-  @media screen and (max-width: 320px) {
+
+  @media screen and (min-width: 320px) and (max-width: 374px) {
     &__heading-wrapper {
-      height: 509px;
+      min-height: 509px;
       max-height: 509px;
       background-image: url('/img/lunch-mobile-small-photo.png');
+    }
+
+    &__general-info-wrapper {
+      overflow-x: auto;
+      @include default-flex-centered-column;
+      gap: 56px;
+      margin: 56px 0;
+      min-height: 1270px;
+      max-height: 1270px;
+    }
+
+    &__details-wrapper {
+      height: unset;
     }
   }
 }

@@ -1,4 +1,4 @@
-import { detailsData } from "./details-data";
+import { detailsData } from "@utils/mockData/details-data";
 
 function Details(): JSX.Element {
 
