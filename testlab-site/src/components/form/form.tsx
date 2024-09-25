@@ -3,7 +3,7 @@ import { ChangeEvent, FormEvent, useRef, useState } from 'react';
 import CheckIcon from '@assets/check.svg?react';
 
 function Form(): JSX.Element {
-  const formDataDefault = {
+  const formDataDefault:{[key:string]:string} = {
     name: '',
     phone: '',
   };
@@ -26,16 +26,18 @@ function Form(): JSX.Element {
   };
   const handleFocus = (name: string) => {
     const inputRef = name === FormFieldName.Name ? nameRef : phoneRef;
-    const label = inputRef.current?.previousElementSibling;
+    const label = inputRef.current?.nextElementSibling;
     if (label) {
       label.classList.add('label--visible');
+      inputRef.current?.classList.remove('input-empty');
     }
   };
   const handleBlur = (name: string) => {
     const inputRef = name === FormFieldName.Name ? nameRef : phoneRef;
-    const label = inputRef.current?.previousElementSibling;
-    if (label) {
+    const label = inputRef.current?.nextElementSibling;
+    if (label && formData[name]==='') {
       label.classList.remove('label--visible');
+      inputRef.current?.classList.add('input-empty');
     }
   };
   return (
@@ -44,13 +46,10 @@ function Form(): JSX.Element {
       <form method='post' action='/' onSubmit={handleFormSubmit}>
         <div className='form__content-wrapper'>
           <div className='form__input-container form-input'>
-            <label className={`form-input__label`} htmlFor={FormFieldName.Name}>
-              Имя
-            </label>
             <input
               type='text'
               name={FormFieldName.Name}
-              className={`form-input__input  `}
+              className='form-input__input input-empty'
               placeholder='Имя'
               value={formData.name}
               onChange={handleInputChange}
@@ -59,20 +58,20 @@ function Form(): JSX.Element {
               ref={nameRef}
               required
             />
+            <label
+              className='form-input__label'
+              htmlFor={FormFieldName.Name}
+            >
+              Имя
+            </label>
+            <div className='form-input__validation-icon'/>
+            <span className='form-input__error'>Заполните поле (только русские буквы)</span>
           </div>
           <div className='form__input-container form-input'>
-            <label
-              className={`form-input__label ${
-                formData.name !== '' ? 'label--visible' : 'label--hidden'
-              }`}
-              htmlFor={FormFieldName.Phone}
-            >
-              Телефон
-            </label>
             <input
               type='tel'
               name={FormFieldName.Phone}
-              className='form-input__input'
+              className='form-input__input input-empty'
               placeholder='Телефон'
               value={formData.phone}
               onChange={handleInputChange}
@@ -81,6 +80,15 @@ function Form(): JSX.Element {
               ref={phoneRef}
               required
             />
+            <label
+              className={`form-input__label ${
+                formData.phone !== '' ? 'label--visible' : 'label--hidden'
+              }`}
+              htmlFor={FormFieldName.Phone}
+            >
+              Телефон
+            </label>
+            <span className='form-input__error'>Заполните поле (только цифры)</span>
           </div>
           <div className='form__input-container form-checkbox'>
             <label>

@@ -12,11 +12,12 @@
   &__content-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 384px);
-    grid-template-rows: repeat(2, 64px);
+    grid-template-rows: repeat(2, minmax(64px, 1fr));
     gap: 30px 32px;
   }
 
   &__button {
+    max-height: 64px;
     background-color: $color-primary;
     border-radius: 4px;
     border: none;
@@ -33,18 +34,23 @@
     background-color: $color-primary-hover;
     cursor: pointer;
   }
-  @media screen and (min-width: 320px) and (max-width: 374px) {
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    &__content-wrapper {
+      grid-template-columns: repeat(2, 352px);
+      gap: 24px 30px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
     &__title {
       @include font-headline-4;
     }
-
     &__content-wrapper {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
+      @include default-flex-column;
       gap: 20px;
+      width: 100%;
     }
-
     &__button {
       width: 100%;
       height: 64px;
@@ -53,38 +59,30 @@
 }
 
 .form-input {
+  @include default-flex-column;
   &__input {
-    width: 350px;
-    height: 31px;
-    padding: 16px;
+    width: 300px;
+    height: 32px;
+    padding: 16px 66px 16px 16px;
     @include font-body-18;
     border-radius: 4px;
     border: 2px solid $color-extralight-gray;
     background-color: $color-extralight-gray;
+    &.input-invalid {
+      border: 2px solid $color-dangerous;
+    }
   }
 
-  &__input::-webkit-input-placeholder {
-    color: $color-dark-gray;
-  }
-
-  &__input::-moz-placeholder {
-    color: $color-dark-gray;
-  }
-
-  &__input:-ms-input-placeholder {
-    color: $color-dark-gray;
-  }
-
-  &__input::-ms-input-placeholder {
-    color: $color-dark-gray;
-  }
-
+  &__input::-webkit-input-placeholder,
+  &__input::-moz-placeholder,
+  &__input:-ms-input-placeholder,
+  &__input::-ms-input-placeholder,
   &__input::placeholder {
     color: $color-dark-gray;
   }
 
-  &__input:focus {
-    border: 2px solid $color-mid-gray;
+  &__input:focus,
+  &__input:not(.input-empty) {
     background-color: $color-white;
     color: $color-dark-gray;
     outline: none;
@@ -92,44 +90,89 @@
     padding-bottom: 4px;
   }
 
-  &__input:focus::-webkit-input-placeholder {
-    color: $color-mid-gray;
+  &__input:focus {
+    border: 2px solid $color-mid-gray;
   }
 
-  &__input:focus::-moz-placeholder {
-    color: $color-mid-gray;
-  }
-
-  &__input:focus:-ms-input-placeholder {
-    color: $color-mid-gray;
-  }
-
-  &__input:focus::-ms-input-placeholder {
-    color: $color-mid-gray;
-  }
-
+  &__input:focus::-webkit-input-placeholder,
+  &__input:focus::-moz-placeholder,
+  &__input:focus:-ms-input-placeholder,
+  &__input:focus::-ms-input-placeholder,
   &__input:focus::placeholder {
-    color: $color-mid-gray;
+    color: $color-dark-gray;
   }
 
   &__label {
     opacity: 0;
     position: relative;
-    top: 24px;
-    left: 18px;
+    bottom: 60px;
+    left: 16px;
     @include font-body-14;
     color: $color-gray;
-
+    width: 1px;
+    height: 1px;
     &.label--visible {
       opacity: 1;
+    }
+  }
+
+  &__error {
+    @include font-body-12;
+    color: $color-dangerous;
+  }
+
+  &__input:not(.input-invalid) ~ &__error {
+    display: none;
+  }
+
+  &__validation-icon {
+    width: 1px;
+    height: 1px;
+  }
+
+  &__input.input-valid ~ &__validation-icon::before {
+    content: url('src/assets/success-input.svg');
+  }
+  &__input.input-invalid ~ &__validation-icon::before {
+    content: url('src/assets/error-input.svg');
+  }
+  &__input.input-invalid ~ &__validation-icon::before,
+  &__input.input-valid ~ &__validation-icon::before {
+    position: relative;
+    bottom: 44px;
+    left: 340px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 100%;
+    &__input {
+      width: 268px;
+      height: 32px;
+    }
+    &__input.input-invalid ~ &__validation-icon::before {
+      left: 308px;
+    }
+  }
+
+  @media screen and (min-width: 375px) and (max-width: 767px) {
+    width: 100%;
+    &__input {
+      width: 260px;
+      height: 32px;
+    }
+    &__input.input-invalid ~ &__validation-icon::before {
+      left: 310px;
     }
   }
 
   @media screen and (min-width: 320px) and (max-width: 374px) {
     width: 100%;
     &__input {
-      width: 256px;
+      width: 206px;
       height: 28px;
+    }
+    &__input.input-invalid ~ &__validation-icon::before {
+      left: 250px;
     }
   }
 }

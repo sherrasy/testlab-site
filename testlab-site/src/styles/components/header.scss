@@ -31,19 +31,7 @@
       position: fixed;
       top: 0;
       left: 0;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: start;
-      -ms-flex-align: start;
-      align-items: flex-start;
-      -webkit-box-pack: start;
-      -ms-flex-pack: start;
-      justify-content: flex-start;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
+      @include default-flex-column;
       padding: 28px 16px;
       height: 100vh;
       width: 97%;
@@ -99,7 +87,7 @@
 
     &__list--dropped &__option::after {
       position: fixed;
-      right: 30px;
+      right: 16px;
       content: url('src/assets/menu-right-arrow.svg');
       padding-top: 4px;
     }
