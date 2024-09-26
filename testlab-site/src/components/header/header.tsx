@@ -21,7 +21,10 @@ function Header(): JSX.Element {
         <h5>testLab</h5>
       </div>
       <nav className='header__navigation navigation'>
-        <button className={`navigation__button ${isOpen? 'exit-btn' :'menu-btn'} `} onClick={handleOnClick}>
+        <button
+          className={`navigation__button ${isOpen ? 'exit-btn' : 'menu-btn'} `}
+          onClick={handleOnClick}
+        >
           {isOpen ? <ExitIcon /> : <MenuIcon />}
         </button>
         <ul

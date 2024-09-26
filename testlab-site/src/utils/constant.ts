@@ -11,5 +11,7 @@ export const FormFieldName = {
 
 export const ValidationPattern = {
   name: /^[\u0400-\u04FF\s-]+$/,
-  phone: /^\+\d{11}$/,
+  phone: /^\d{11}$/,
 } as const;
+
+export const REDUCER_NAME = 'FORM'
