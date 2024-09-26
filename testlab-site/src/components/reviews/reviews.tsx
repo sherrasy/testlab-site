@@ -4,30 +4,37 @@ import ReviewCard from './review-card';
 import { reviewsData } from '@utils/mockData/reviews-data';
 
 function Reviews(): JSX.Element {
-  const settings:Settings = {
-    dots: true, 
+  const settings: Settings = {
+    dots: true,
     slidesToShow: 3,
-    slidesToScroll: 1, 
+    slidesToScroll: 1,
     infinite: false,
-    draggable:false,
+    draggable: false,
+    swipe:false,
+    swipeToSlide: false,
     responsive: [
       {
-        breakpoint: 768, 
+        breakpoint: 1187,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          swipe:true,
+          swipeToSlide: true,
         },
       },
-      {   breakpoint: 765, 
+      {
+        breakpoint: 767,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          swipeToSlide: true,
+          swipe:true,
         },
-      }
-    ], 
-    nextArrow: <ReviewNextArrow/>,
+      },
+    ],
+    nextArrow: <ReviewNextArrow />,
     prevArrow: <ReviewPrevArrow />,
-
+    
   };
   return (
     <div className='reviews'>
@@ -35,11 +42,11 @@ function Reviews(): JSX.Element {
       <div className='reviews__swiper-container'>
         <div className='reviews__swiper swiper'>
           <Slider {...settings} >
-          {reviewsData.map((review) => (
-            <div className='swiper__slide' key={review.id}>
-              <ReviewCard review={review} />
-            </div>
-          ))}
+            {reviewsData.map((review) => (
+              <div className='swiper__slide' key={review.id}>
+                <ReviewCard review={review} />
+              </div>
+            ))}
           </Slider>
         </div>
       </div>
