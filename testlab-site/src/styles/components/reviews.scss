@@ -29,11 +29,11 @@
       margin: 0 10px;
     }
     li > button:before {
-      content: url('src/assets/pagination-dot.svg');
+      content: url('/img/icons/pagination-dot.svg');
       opacity: 1;
     }
     li.slick-active > button:before {
-      content: url('src/assets/pagination-dot-active.svg');
+      content: url('/img/icons/pagination-dot-active.svg');
       opacity: 1;
     }
   }
