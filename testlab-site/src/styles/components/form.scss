@@ -141,10 +141,10 @@
   }
 
   &__input.input-valid ~ &__validation-icon::before {
-    content: url('src/assets/success-input.svg');
+    content: url('/img/icons/validation-success-icon.svg');
   }
   &__input.input-invalid ~ &__validation-icon::before {
-    content: url('src/assets/error-input.svg');
+    content: url('/img/icons/validation-error-icon.svg');
   }
 
   &__input.input-invalid ~ &__validation-icon::before,
