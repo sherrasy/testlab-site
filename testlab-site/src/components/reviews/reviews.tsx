@@ -9,9 +9,7 @@ function Reviews(): JSX.Element {
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: false,
-    draggable: false,
-    swipe:false,
-    swipeToSlide: false,
+    swipeToSlide: true,
     responsive: [
       {
         breakpoint: 1187,

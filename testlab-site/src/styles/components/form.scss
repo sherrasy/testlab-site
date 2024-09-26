@@ -146,6 +146,7 @@
   &__input.input-invalid ~ &__validation-icon::before {
     content: url('src/assets/error-input.svg');
   }
+
   &__input.input-invalid ~ &__validation-icon::before,
   &__input.input-valid ~ &__validation-icon::before {
     position: relative;
@@ -159,7 +160,8 @@
       width: 268px;
       height: 32px;
     }
-    &__input.input-invalid ~ &__validation-icon::before {
+    &__input.input-invalid ~ &__validation-icon::before,
+    &__input.input-valid ~ &__validation-icon::before {
       left: 308px;
     }
   }
@@ -170,8 +172,9 @@
       width: 260px;
       height: 32px;
     }
-    &__input.input-invalid ~ &__validation-icon::before {
-      left: 310px;
+    &__input.input-invalid ~ &__validation-icon::before,
+    &__input.input-valid ~ &__validation-icon::before {
+      left: 300px;
     }
   }
 
@@ -181,8 +184,9 @@
       width: 206px;
       height: 28px;
     }
-    &__input.input-invalid ~ &__validation-icon::before {
-      left: 250px;
+    &__input.input-invalid ~ &__validation-icon::before,
+    &__input.input-valid ~ &__validation-icon::before {
+      left: 248px;
     }
   }
 }

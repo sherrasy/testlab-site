@@ -1,11 +1,11 @@
 import { FormFieldName, ValidationPattern } from '@/utils/constant';
-import { ChangeEvent, FormEvent, RefObject, useRef, useState } from 'react';
-import CheckIcon from '@assets/check.svg?react';
-import { getHasPostingError, getIsPosting } from '@/store/form-data/selectors';
-import { useAppDispatch, useAppSelector } from '@/utils/hooks';
 import { validateFormData, validateFormField } from '@/utils/helpers';
-import { TFormData } from '@/types/form-data.type';
-import { sendForm } from '@/store/form-data/api-actions';
+import CheckIcon from '@assets/check.svg?react';
+import { TFormData } from '@frontend-types/form-data.type';
+import { sendForm } from '@store/form-data/api-actions';
+import { getHasPostingError, getIsPosting } from '@store/form-data/selectors';
+import { useAppDispatch, useAppSelector } from '@utils/hooks';
+import { ChangeEvent, FormEvent, RefObject, useRef, useState } from 'react';
 
 function Form(): JSX.Element {
   const formDataDefault = {
@@ -73,7 +73,7 @@ function Form(): JSX.Element {
     const value = formData[name as keyof TFormData];
     const {isNotEmpty, isPatternValid} = validateFormField(value, pattern)
     if (!isNotEmpty) {
-setDefaultParams(inputRef)
+      setDefaultParams(inputRef)
       return;
     }
     if (!isPatternValid) {
@@ -104,6 +104,7 @@ setDefaultParams(inputRef)
               onFocus={() => handleFocus(FormFieldName.Name)}
               onBlur={() => handleBlur(FormFieldName.Name)}
               ref={nameRef}
+              autoComplete="off"
               required
             />
             <label className='form-input__label' htmlFor={FormFieldName.Name}>
@@ -125,6 +126,7 @@ setDefaultParams(inputRef)
               onFocus={() => handleFocus(FormFieldName.Phone)}
               onBlur={() => handleBlur(FormFieldName.Phone)}
               ref={phoneRef}
+              autoComplete="off"
               required
             />
             <label
