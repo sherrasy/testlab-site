@@ -45,12 +45,6 @@
     overflow-x: hidden;
   }
 
-  @media screen and (min-width: 1218px) {
-    &__details-wrapper {
-      height: 662px;
-    }
-  }
-
   @media screen and (max-width: 1023px) {
     &__general-info-wrapper {
       overflow-x: auto;

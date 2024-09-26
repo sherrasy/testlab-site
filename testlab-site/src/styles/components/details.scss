@@ -5,7 +5,7 @@
   gap: 37px 32px;
   width: 1216px;
   height: 100%;
-
+  margin: 68px 0;
   &__title {
     margin-top: 0;
     margin-bottom: 17px;
@@ -20,7 +20,7 @@
     @include default-flex-column;
     gap: 20px;
     height: unset;
-    margin: 16px 0;
+    margin: 20px 0;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1218px) {

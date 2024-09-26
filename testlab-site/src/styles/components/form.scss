@@ -9,6 +9,13 @@
     @include font-headline-2;
   }
 
+  &__posting-error {
+    margin-top: 10px;
+    @include font-headline-6;
+    font-weight: 600;
+    color: $color-dangerous;
+  }
+
   &__content-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 384px);
@@ -89,6 +96,9 @@
     padding-top: 28px;
     padding-bottom: 4px;
   }
+  &__input:focus.input-invalid {
+    border: 2px solid $color-dangerous;
+  }
 
   &__input:focus {
     border: 2px solid $color-mid-gray;
@@ -136,6 +146,7 @@
   &__input.input-invalid ~ &__validation-icon::before {
     content: url('src/assets/error-input.svg');
   }
+
   &__input.input-invalid ~ &__validation-icon::before,
   &__input.input-valid ~ &__validation-icon::before {
     position: relative;
@@ -149,7 +160,8 @@
       width: 268px;
       height: 32px;
     }
-    &__input.input-invalid ~ &__validation-icon::before {
+    &__input.input-invalid ~ &__validation-icon::before,
+    &__input.input-valid ~ &__validation-icon::before {
       left: 308px;
     }
   }
@@ -160,8 +172,9 @@
       width: 260px;
       height: 32px;
     }
-    &__input.input-invalid ~ &__validation-icon::before {
-      left: 310px;
+    &__input.input-invalid ~ &__validation-icon::before,
+    &__input.input-valid ~ &__validation-icon::before {
+      left: 300px;
     }
   }
 
@@ -171,8 +184,9 @@
       width: 206px;
       height: 28px;
     }
-    &__input.input-invalid ~ &__validation-icon::before {
-      left: 250px;
+    &__input.input-invalid ~ &__validation-icon::before,
+    &__input.input-valid ~ &__validation-icon::before {
+      left: 248px;
     }
   }
 }
