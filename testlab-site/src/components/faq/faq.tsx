@@ -1,9 +1,9 @@
 import { useState } from "react";
 import FaqItem from "./faq-item";
-import { faqData } from "./faq-data";
+import { faqData } from "@utils/mockData/faq-data";
 
 function Faq(): JSX.Element {
-    const [activeIndex, setActiveIndex] = useState<number|null>(1);
+    const [activeIndex, setActiveIndex] = useState<number|null>(0);
 
     const handleItemClick = (i:number) => {
      setActiveIndex((prev) => (prev === i ? null : i));

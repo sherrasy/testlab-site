@@ -1,37 +1,23 @@
-import { Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Review } from '@frontend-types/review.interface';
 
-function ReviewCard(): JSX.Element {
-  const mock = [
-    {
-      id: 1,
-      name: 'Иван Иванов',
-      avatar: 'avatar',
-      city: 'Санкт-Петербург',
-      text: 'Каждый из нас понимает очевидную вещь: перспективное планирование предоставляет широкие возможности для анализа существующих паттернов поведения. В своём стремлении улучшить пользовательский опыт мы упускаем, что активно развивающиеся страны третьего мира призваны к ответу.',
-    },
-  ];
+type ReviewCardProps = { review: Review };
 
+function ReviewCard({ review }: ReviewCardProps): JSX.Element {
+  const { id, name, avatar, city, text } = review;
   return (
-    <div className='reviews'>
-      <Swiper
-        navigation={true}
-        modules={[Navigation, Pagination]}
-        className='mySwiper'
-      >
-        {mock.map(({ id, name, avatar, city, text }) => (
-          <SwiperSlide className='reviews__card review-card' key={id}>
-            <div className='review-card__header'>
-              <img src={avatar} alt={`avatar-${id}`} />
-              <div>
-                <h6>{name}</h6>
-                <span>{city}</span>
-              </div>
-            </div>
-            <div className='review-card__text'>{text}</div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div className='reviews__card review-card'>
+      <div className='review-card__header'>
+        <img
+          className='review-card__avatar'
+          src={avatar}
+          alt={`avatar-${id}`}
+        />
+        <div className='review-card__user-info user-info'>
+          <h6 className='user-info__name'>{name}</h6>
+          <span className='user-info__city'>{city}</span>
+        </div>
+      </div>
+      <div className='review-card__text'>{text}</div>
     </div>
   );
 }

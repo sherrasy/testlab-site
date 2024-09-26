@@ -12,13 +12,13 @@ export const howToData = [
     },
     {
         id: 2,
-        icon: <SecureIcon/>,
+        icon: <DeliveryIcon/>,
         title: 'Изучи весь макет заранее',
         text: 'Подумай как это будет работать на разных разрешениях и при скролле',
       },
     {
         id: 3,
-        icon: <DeliveryIcon/>,
+        icon: <SecureIcon/>,
         title: 'Сделай хорошо',
         text: 'Чтобы мы могли тебе доверить подобные задачи в будущем',
       },

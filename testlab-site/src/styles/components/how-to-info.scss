@@ -1,12 +1,11 @@
 .how-to-info {
   width: 1216px;
-  height: 281px;
 
   &__title {
     text-align: center;
     margin-top: 0;
     margin-bottom: 61px;
-    font-size: 40px;
+    @include font-headline-2;
   }
 
   &__container {
@@ -27,11 +26,73 @@
   &__title {
     margin-top: 16px;
     margin-bottom: 4px;
-    font-size: 16px;
+    @include font-headline-6;
   }
 
   &__text {
     color: $color-dark-gray;
-    line-height: 24px;
+    @include font-body-14;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .how-to-item {
+    display: flex;
+    width: 342px;
+    gap: 16px;
+    gap &__icon > svg {
+      width: 56px;
+      height: 56px;
+    }
+    &__title {
+      margin-top: 0;
+      margin-bottom: 4px;
+      @include font-headline-6;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .how-to-info {
+    width: 718px;
+    &__title {
+      margin-bottom: 42px;
+    }
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(2, 342px);
+      grid-template-rows: repeat(2, minmax(76px, 1fr));
+      gap: 32px 34px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .how-to-info {
+    margin: 0 16px;
+    &__title {
+      margin-bottom: 26px;
+      @include font-headline-4;
+    }
+    &__container {
+      @include default-flex-centered-column;
+      gap: 32px;
+    }
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .how-to-info {
+    width: 342px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  .how-to-info {
+    width: 228px;
+  }
+
+  .how-to-item {
+    width: 288px;
   }
 }

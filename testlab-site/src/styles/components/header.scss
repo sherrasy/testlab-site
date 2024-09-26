@@ -18,27 +18,28 @@
     }
 
     h5 {
-      font-size: 20px;
+      @include font-headline-5;
       margin: 0 0 0 9px;
     }
   }
 
   @media screen and (max-width: 1023px) {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     &.menu--dropped {
       position: fixed;
       top: 0;
       left: 0;
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      flex-direction: column;
+      @include default-flex-column;
       padding: 28px 16px;
-      background-color: $color-white;
       height: 100vh;
       width: 97%;
-      transition: 0.5s ease-in-out;
+      background-color: $color-white;
       color: $color-black;
+      -webkit-transition: 0.5s linear;
+      -o-transition: 0.5s linear;
+      transition: 0.5s linear;
       z-index: 1000;
     }
   }
@@ -51,22 +52,30 @@
     }
 
     &__button {
-      position: absolute;
-      top: 6px;
-      right: 20px;
       width: 62px;
       height: 62px;
       padding: 25px 20px;
       background-color: transparent;
       border: none;
+
+      &.exit-btn {
+        position: absolute;
+        top: 6px;
+        right: 20px;
+      }
+
+      &.menu-btn {
+        position: absolute;
+        top: 8px;
+        right: 0;
+      }
     }
 
     &__list--dropped {
       width: calc(100vw - 28px);
       padding: 0;
       list-style-type: none;
-      font-size: 18px;
-      line-height: 32px;
+      @include font-body-18;
     }
 
     &__list--dropped &__option {
@@ -78,7 +87,7 @@
 
     &__list--dropped &__option::after {
       position: fixed;
-      right: 30px;
+      right: 16px;
       content: url('src/assets/menu-right-arrow.svg');
       padding-top: 4px;
     }
@@ -101,7 +110,7 @@
       display: flex;
       gap: 24px;
       list-style-type: none;
-      font-size: 16px;
+      @include font-body-16;
     }
     &__option > a {
       color: $color-white;
