@@ -14,7 +14,7 @@
     overflow-x: auto;
     height: 960px;
     max-height: 960px;
-    background-image: url('img/background/lunch-dekstop-photo.png');
+    background-image: url('/img/background/lunch-dekstop-photo.png');
     background-size: cover;
     background-position: center;
   }
@@ -62,7 +62,7 @@
     &__heading-wrapper {
       height: 1024px;
       max-height: 1024px;
-      background-image: url('img/background/lunch-tablet-photo.png');
+      background-image: url('/img/background/lunch-tablet-photo.png');
     }
 
     &__general-info-wrapper {
@@ -88,7 +88,7 @@
     &__heading-wrapper {
       height: 596px;
       max-height: 596px;
-      background-image: url('img/background/lunch-mobile-photo.png');
+      background-image: url('/img/background/lunch-mobile-photo.png');
     }
 
     &__general-info-wrapper {
@@ -101,7 +101,7 @@
     &__heading-wrapper {
       min-height: 509px;
       max-height: 509px;
-      background-image: url('img/background/lunch-mobile-small-photo.png');
+      background-image: url('/img/background/lunch-mobile-small-photo.png');
     }
 
     &__general-info-wrapper {
